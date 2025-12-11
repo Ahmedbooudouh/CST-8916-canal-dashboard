@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rideau Canal Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div class="app-title-block">
+          <h1 class="app-title">Rideau Canal Safety Dashboard</h1>
+          <p class="app-subtitle">
+            Real-time ice safety overview for Dow’s Lake, Fifth Avenue, and NAC
+          </p>
+        </div>
+        <div class="app-meta">
+          <span id="last-refresh">Last refresh: --</span>
+          <span class="badge badge-pill">Auto-refresh: 30s</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="cards">
+          <div class="card" id="card-dows-lake">
+            <h2>Dow's Lake</h2>
+            <p class="status">--</p>
+            <p>Ice thickness: <span class="ice">--</span> cm</p>
+            <p>Surface temp: <span class="surface">--</span> °C</p>
+            <p>Snow: <span class="snow">--</span> cm</p>
+            <p>External temp: <span class="external">--</span> °C</p>
+          </div>
+
+          <div class="card" id="card-fifth-avenue">
+            <h2>Fifth Avenue</h2>
+            <p class="status">--</p>
+            <p>Ice thickness: <span class="ice">--</span> cm</p>
+            <p>Surface temp: <span class="surface">--</span> °C</p>
+            <p>Snow: <span class="snow">--</span> cm</p>
+            <p>External temp: <span class="external">--</span> °C</p>
+          </div>
+
+          <div class="card" id="card-nac">
+            <h2>NAC</h2>
+            <p class="status">--</p>
+            <p>Ice thickness: <span class="ice">--</span> cm</p>
+            <p>Surface temp: <span class="surface">--</span> °C</p>
+            <p>Snow: <span class="snow">--</span> cm</p>
+            <p>External temp: <span class="external">--</span> °C</p>
+          </div>
+        </section>
+
+        <section class="chart-section">
+          <h2>Ice Thickness – Last Aggregated Points</h2>
+          <div class="chart-container">
+            <canvas id="iceChart"></canvas>
+          </div>
+          <div class="chart-controls">
+            <button data-location="Dow's Lake" class="btn active">
+              Dow's Lake
+            </button>
+            <button data-location="Fifth Avenue" class="btn">
+              Fifth Avenue
+            </button>
+            <button data-location="NAC" class="btn">NAC</button>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
